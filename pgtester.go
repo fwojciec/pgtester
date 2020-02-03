@@ -17,7 +17,7 @@ type PGT struct {
 }
 
 // New returns a new instance of PGT.
-func New(dbConnString string, schema Schema, rs rand.Source) (*PGT, error) {
+func New(dbConnString string, schema Schema) (*PGT, error) {
 	db, err := sqlx.Open("postgres", dbConnString)
 	if err != nil {
 		return nil, err

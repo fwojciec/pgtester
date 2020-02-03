@@ -2,7 +2,6 @@ package pgtester
 
 import (
 	"fmt"
-	"math/rand"
 	"path/filepath"
 	"reflect"
 	"runtime"
@@ -70,7 +69,7 @@ var pgt *PGT
 
 func init() {
 	var err error
-	pgt, err = New("dbname=test_db sslmode=disable", testSchema, rand.NewSource(1))
+	pgt, err = New("dbname=test_db sslmode=disable", testSchema)
 	if err != nil {
 		panic(err)
 	}
